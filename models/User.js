@@ -7,6 +7,10 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
+    username: {
+        type: String,
+        required: true,
+    },
     email: {
         type: String,
         required: true,
@@ -22,6 +26,10 @@ const UserSchema = new Schema({
         type: Date,
         default: Date.now,
     },
+    dateOfBirth: {
+        type: Date,
+    },
+    // TODO: Add gender, school, location
 });
 
 module.exports = User = mongoose.model("users", UserSchema);

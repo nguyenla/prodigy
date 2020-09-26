@@ -1,13 +1,16 @@
 const express = require("express");
-const router = express.Router();
 const gravatar = require("gravatar");
-
 const bcrypt = require("bcryptjs");
+
+const validateLoginInput = require("../../validation/login");
+const validateRegisterInput = require("../../validation/register");
 
 const User = require("../../models/User");
 
+const router = express.Router();
+
 // @route GET api/users/test
-// @desc Tests users route
+// @desc Tests users route: just display a success message
 // @access Public
 router.get("/test", (req, res) => res.json("User works!"));
 
@@ -15,6 +18,11 @@ router.get("/test", (req, res) => res.json("User works!"));
 // @desc Register new user
 // @access Public
 router.post("/register", (req, res) => {
+    const { errors, isValid } = validateRegisterInput(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
     User.findOne({ email: req.body.email }).then((user) => {
         if (user) {
             return res.status(400).json({ email: "Email already exists" });
@@ -27,9 +35,10 @@ router.post("/register", (req, res) => {
 
             const new_user = new User({
                 name: req.body.name,
+                username: req.body.username,
                 email: req.body.email,
-                avatar,
                 password: req.body.password,
+                avatar,
             });
 
             bcrypt.genSalt(10, (err, salt) => {
@@ -43,6 +52,37 @@ router.post("/register", (req, res) => {
                 });
             });
         }
+    });
+});
+
+// @route GET api/users/login
+// @desc Login new user, returning JWT token
+// @access Public
+router.post("/login", (req, res) => {
+    const { errors, isValid } = validateLoginInput(req.body);
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    const email = req.body.email;
+    const password = req.body.password;
+
+    // Find user by email
+    User.findOne({ email }).then((user) => {
+        if (!user) {
+            errors.email = "User not found.";
+            return res.status(404).json(errors);
+        }
+
+        // Check password
+        bcrypt.compare(password, user.password).then((isMatch) => {
+            if (isMatch) {
+                return res.json({ msg: "Success" });
+            } else {
+                errors.password = "Password incorrect";
+                return res.status(400).json(errors);
+            }
+        });
     });
 });
 
