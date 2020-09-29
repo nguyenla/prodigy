@@ -4,24 +4,26 @@
 /* Style the navigation bar */
 .navbar {
     width: 100%;
-    background-color: #eb8f85;
     overflow: auto;
+    background-color: #ff9966;
 }
 
-/* Navbar links */
-.navbar a {
+/* Navbar links on mouse-over */
+.navbar span:hover {
+    background-color: #ff9966;
+    cursor: pointer;
+}
+
+/* Navbar spans */
+.navbarSpan {
     float: left;
     text-align: center;
     padding: 1.3rem;
     color: white;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: "Sofia";
-}
-
-/* Navbar links on mouse-over */
-.navbar a:hover {
-    background-color: #ff9966;
+    background-color: transparent;
 }
 
 /* Current/active navbar link */
@@ -31,7 +33,7 @@
 
 /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
 @media screen and (max-width: 500px) {
-    .navbar a {
+    .navbarSpan {
         float: none;
         display: block;
     }
@@ -68,10 +70,11 @@ body {
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    width: 250px;
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sidenav span {
     text-decoration: none;
     color: #242222;
     display: block;
@@ -80,8 +83,9 @@ body {
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+.sidenav span:hover {
     color: #f1f1f167;
+    cursor: pointer;
 }
 
 /* Position and style the close button (top right corner) */
@@ -94,10 +98,14 @@ body {
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
+.main {
     transition: margin-right 0.5s;
     padding: 20px;
     opacity: 0.85;
+}
+
+.main-with-sidebar {
+    margin-left: 250px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -133,7 +141,7 @@ input[type="password"] {
     box-sizing: border-box;
 }
 
-button {
+#loginButton {
     background-color: #4caf50;
     color: white;
     padding: 14px 20px;
@@ -151,14 +159,14 @@ button:hover {
     padding: 16px;
 }
 
-span.psw {
+span.password {
     float: right;
     padding-top: 16px;
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-    span.psw {
+    span.password {
         display: block;
         float: none;
     }

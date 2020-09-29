@@ -1,42 +1,60 @@
 import React, { Component } from "react";
 
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
+import WelcomeText from "./WelcomeText";
+
 class Home extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            displaySideBar: false,
+        };
+        this.displayLoginSidebar = this.displayLoginSidebar.bind(this);
+        this.closeSidebar = this.closeSidebar.bind(this);
+    }
+
+    displayLoginSidebar() {
+        console.log("Showing side bar");
+        this.setState({
+            displaySideBar: true,
+        });
+    }
+
+    closeSidebar() {
+        console.log("Closing side bar");
+        this.setState({
+            displaySideBar: false,
+        });
+    }
+
     render() {
+        const { displaySideBar } = this.state;
+        let sideBar,
+            mainClass = "main";
+
+        if (displaySideBar) {
+            sideBar = (
+                <Sidebar
+                    closeSidebar={() => {
+                        this.closeSidebar();
+                    }}
+                />
+            );
+            mainClass = "main main-with-sidebar";
+        }
+
         return (
-            <div id="introBox">
-                <br />
-                <div id="introText1" className="introText">
-                    <p2>
-                        Những bài đọc trên Prodigy được biên dịch dựa trên bộ
-                        sách nổi tiếng “Daily Warm-ups Reading” của Nhà Xuất Bản
-                        Teacher Created Resources, cung cấp kiến thức một cách
-                        phong phú qua các chủ đề khác nhau từ động vật, lịch sử,
-                        địa lý cho đến khoa học.
-                    </p2>
-                    <br />
-                    <br />
-                </div>
-
-                <div id="introText2" className="introText">
-                    <p3>
-                        Các bài đọc được thiết kế ngắn gọn, dễ hiểu, đồng thời
-                        lồng ghép những câu hỏi dựa trên quy tắc phân loại của
-                        Bloom nhằm giúp các bạn nhỏ từng bước rèn luyện kỹ năng
-                        đọc hiểu, mở rộng vốn từ… Đây chính là tiền đề cho việc
-                        phát triển ngôn ngữ và hiểu biết sâu rộng cho các em sau
-                        này.
-                    </p3>
-                    <br />
-                    <br />
-                </div>
-
-                <div id="introText3" className="introText">
-                    <p4>
-                        Các em hãy tự tìm hiểu và khám phá Prodigy cùng với bố
-                        mẹ nhé! Và hãy tự đặt ra cho mình mục tiêu mỗi ngày
-                        “chinh phục" tối thiểu 1-2 bài đọc được không nào?
-                    </p4>
-                </div>
+            <div id="main" className={mainClass}>
+                {sideBar}
+                <Navbar
+                    displayLoginSidebar={() => {
+                        this.displayLoginSidebar();
+                    }}
+                />
+                <WelcomeText />
+                <Footer />
             </div>
         );
     }
