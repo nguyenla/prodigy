@@ -86,10 +86,10 @@ class CreateAccount extends Component {
                         .
                     </p>
                     <div className="clearfix">
-                        <button type="button" className="signup-cancel-btn">
+                        <Link to="/" className="cancel-btn">
                             Huỷ
-                        </button>
-                        <button type="submit" className="signup-submit-btn">
+                        </Link>
+                        <button type="submit" className="submit-btn">
                             Đăng Ký
                         </button>
                     </div>
