@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
     render() {
         return (
             <div id="mySidenav" className="sidenav">
-                <span class="closebtn" onClick={this.props.closeSidebar}>
+                <span className="closebtn" onClick={this.props.closeSidebar}>
                     &times;
                 </span>
 
@@ -44,9 +45,14 @@ class Navbar extends Component {
                     </div>
 
                     <div className="container">
-                        <span className="sidenav-links">Quên Mật Khẩu?</span>
+                        <Link to="/forgot-password" className="sidenav-links">
+                            Quên Mật Khẩu?
+                        </Link>
                         <br />
-                        <span className="sidenav-links">Đăng Ký Ngay!</span>
+                        <span className=""></span>
+                        <Link to="/create-account" className="sidenav-links">
+                            Đăng Ký Ngay!
+                        </Link>
                     </div>
                 </form>
             </div>

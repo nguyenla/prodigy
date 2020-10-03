@@ -1,5 +1,6 @@
 :root {
     font-size: 62.5%;
+    opacity: 0.75;
 }
 /* Style the navigation bar */
 .navbar {
@@ -74,7 +75,7 @@ body {
 }
 
 /* The navigation menu links */
-.sidenav span {
+.sidenav-links {
     text-decoration: none;
     color: #242222;
     display: block;
@@ -83,7 +84,7 @@ body {
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav span:hover {
+.sidenav-links:hover {
     color: #f1f1f167;
     cursor: pointer;
 }
@@ -200,4 +201,12 @@ span.password {
 #signature {
     float: right;
     font-family: "Sofia";
+}
+
+#signup-tnc-url {
+    color: "dodgerblue";
+}
+
+#remember-label {
+    margin-bottom: 20px;
 }
