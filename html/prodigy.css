@@ -1,32 +1,140 @@
 :root {
     font-size: 62.5%;
+    color:black;
 }
+
 /* Style the navigation bar */
 .navbar {
     width: 100%;
-    background-color: #eb8f85;
-    overflow: auto;
+    /* background-color: #4abdac; */
+    overflow: hidden;
+    color: white;
+    background-image: url("https://image.freepik.com/free-photo/wooden-texture_1208-334.jpg");
+    margin:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   
   /* Navbar links */
   .navbar a {
     float: left;
+    /* color: #242222; */
+    color:white;
     text-align: center;
-    padding: 1.3rem;
-    color: white;
+    padding: 14px 16px;
     text-decoration: none;
     font-size: 2rem;
-    font-family: 'Sofia';
-  }
+    font-family: 'Open Sans', sans-serif;
+    }
   
   /* Navbar links on mouse-over */
   .navbar a:hover {
-    background-color: #ff9966;
+    color: grey;
   }
   
   /* Current/active navbar link */
-  .active {
-    background-color: #47c7f0;
+  .navbar a.active {
+    background-color: #fe491a;
+    color: #242222;
+  }
+
+  .navbar-center a:hover{
+    color:white;
+  }
+  .navbar-center a {
+    float: none;
+    position: absolute;
+    left: 42%;
+    font-size: 3rem;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+  }
+
+  .navbar-center :hover{
+    font-size: 3.4rem;
+    left: 41%;
+    color:white;
+  }
+
+
+  .navbar-right {
+    float: right;
+  }
+
+ 
+  /* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  /* color: #242222; */
+  color: whitesmoke;
+  background-color: inherit;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style the search box inside the navigation bar */
+.navbar input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  background: #f1f1f1;
+  width: 12rem;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  -webkit-transition: width 0.6s ease-in-out;
+  transition: width 0.6s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+.navbar input[type=text]:focus {
+  width: 30.4%;
+}
+
+.navbar input[type=text] {
+    border: 1px solid #ccc;
   }
   
   /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
@@ -36,27 +144,23 @@
       display: block;
     }
   }
-  
+
 /* Background Image */
-body {
-    background-image: url('https://wallpaperaccess.com/full/1251284.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-    background-size: cover;
+body{
+  margin: auto;
+  background-image: url("https://image.freepik.com/free-photo/wooden-texture_1208-334.jpg");   
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#dashboard {
+  color:white;
+  /* background-color: #F5D47F; */
   }
 
-/* Logo */
-.name {
-    font-size: 8rem;
-    font-weight: 500;
-    font-family: 'sofia';
-    color: #e88252;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 0px;
+#intro{
+  padding-top: 5rem;
 }
-
-
 
 /* The side navigation menu */
 .sidenav {
@@ -132,20 +236,6 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
 
 .container {
   padding: 16px;
@@ -169,27 +259,248 @@ span.psw {
 
 /* Intro */
 #introBox{
-    background-color: antiquewhite;
+    width: auto;
+    border: none;
+    padding: 3rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: none;
+    padding-top: 4rem;
+    background-image: url("https://media.istockphoto.com/photos/old-dirty-paper-texture-picture-id1133497899?k=6&m=1133497899&s=612x612&w=0&h=t0S9kN_X6YtYpq-ODVfZNWPTDNnosHgZy8z-oynj7zg=");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     text-align: left;
-    margin-top: 5rem;
-    margin-bottom: 20rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    text-decoration: none;
+    opacity: 0.9;
 }
 
 #introText{
     margin-left: 4rem;
     margin-right: 4rem;
     letter-spacing: 0rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 200;
-    font-size: 3rem;
-    color:#808080;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    font-size: 2.7rem;
+    color:black;
     text-indent: 5rem;
+    text-shadow: #f9f9f9;
+    
 }
 
 #signature{
     float: right;
     font-family: 'Sofia';
+    font-size: 3rem;
+    text-emphasis: none;
+    text-decoration: none;
+}
+
+/* Styling the image and the dashboard content */
+
+img{
+  margin-top: 5rem;
+  margin-left: 7rem;
+  vertical-align: middle;
+}
+
+p7{
+  float: right;
+  font-size: 4rem;
+  margin-top: 20rem;
+  margin-right: 18rem;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+}
+
+p8{
+  font-size: 2rem;
+  font-family: 'Merriweather', serif;
+}
+
+/* Buttons */
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Green */
+.success {
+  border-color: #4ADBAC;
+  color:#4ADBAC;
+}
+
+.success:hover {
+  background-color: #4ADBAC;
+  color: white;
+}
+
+/* Blue */
+.info {
+  border-color: #FE491A;
+  color:#FE491A;
+}
+
+.info:hover {
+  background: #FE491A;
+  color: white;
+}
+
+/* Orange */
+.warning {
+  border-color: #F7b733;
+  color: #F7b733;
+}
+
+.warning:hover {
+  background: #F7b733;
+  color: white;
+}
+
+/* Arrow down */
+#arrow-down{
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  padding-top: 5rem;
+  text-decoration: none;
+}
+
+#arrow-down a{
+  color: white;
+}
+
+#arrow-down a:hover{
+  color: grey;
+}
+
+#arrow-up{
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  padding-bottom: 5rem;
+}
+
+#arrow-up a{
+  color: white;
+}
+
+#arrow-up a:hover{
+  color: grey;
+}
+
+/*Smooth Scrolling */
+html{
+  scroll-behavior: smooth;
+}
+
+/* Footer styling*/
+footer{
+  background-color:none;
+  opacity: 0.6;
+  color:white;
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+  padding-bottom: none;
+}
+
+footer :hover{
+  opacity: 0.9;
+  background-color: white;
+  color: black;
+}
+
+footer a{
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Why TimeTurner */
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+  font-size: 2rem;
+
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#why-us{
+  background-image: url("https://img.freepik.com/free-photo/seamless-wood-texture-background_105762-62.jpg?size=626&ext=jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: auto;
+  border: none;
+  padding: 3rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-top: 4rem;
+  padding-top: 4rem;
+  font-family:'Merriweather', serif;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+#why-us :hover{
+  opacity: 1;
+}
+
+h3{
+  font-family:'Merriweather', serif;
+  text-align: center;
+  color: #242222;
+  font-size: 4rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 25.0%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  margin: 8px;
+  text-align: center;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+p5{
+  color:grey;
 }
