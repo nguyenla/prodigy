@@ -1,27 +1,40 @@
 import React from "react";
 
+import "../../css/Navbar.css";
+
 function Navbar(props) {
     return (
-        <nav className="navbar navbar-dark bg-dark mb-4">
-            <div className="container">
-                <span id="navbarLogin" className="active navbarSpan">
-                    <i className="fa fa-fw fa-home"></i> Trang Chủ
-                </span>
-                <span id="navbarLogin" className="navbarSpan">
-                    <i className="fa fa-fw fa-search"></i> Tìm Kiếm
-                </span>
-                <span id="navbarLogin" className="navbarSpan">
-                    <i className="fa fa-fw fa-envelope"></i> Liên Hệ
-                </span>
-                <span
-                    id="navbarLogin"
-                    className="navbarSpan"
-                    onClick={props.displayLoginSidebar}
-                >
-                    <i className="fa fa-fw fa-user"></i> Đăng Nhập
-                </span>
+        <div className="navbar">
+            <div className="dropdown">
+                <button className="dropbtn">
+                    <i className="fas fa-atom"></i>
+                    Bài Đọc
+                    <i className="fa fa-caret-down"></i>
+                </button>
+                <div className="dropdown-content">
+                    <a href="#">Động Vật</a>
+                    <a href="#">Địa Lí</a>
+                    <a href="#">Khoa Học</a>
+                    <a href="#">Lịch Sử Nước Mỹ</a>
+                    <a href="#">Sức Khoẻ</a>
+                    <a href="#">Truyện Cổ Tích</a>
+                    <a href="#">Truyện Lịch Sử</a>
+                    <a href="#">Cuộc Sống Thường Ngày</a>
+                    <a href="#">Phiêu Lưu/Huyền Bí</a>
+                    <a href="#">Hư Cấu</a>
+                </div>
             </div>
-        </nav>
+            <input type="text" placeholder="Search.."></input>
+            <div className="navbar-center">
+                <a href="#">
+                    TimeTurner <i className="far fa-hourglass"></i>
+                </a>
+            </div>
+            <div className="navbar-right">
+                <a href="#login">Đăng Nhập</a>
+                <a href="signup.html">Đăng Ký</a>
+            </div>
+        </div>
     );
 }
 
