@@ -5,11 +5,11 @@ import "../../css/homepage/Footer.css";
 export default () => {
     return (
         <footer>
-            <p>
+            <p9>
                 A Team TimeTurner Production|2020 &#169;
                 <br />
                 <a href="mailto:timeturner@gmail.com">timeturner@gmail.com</a>
-            </p>
+            </p9>
         </footer>
     );
 };

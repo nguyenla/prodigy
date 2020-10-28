@@ -18,7 +18,6 @@ body {
 #main {
     transition: margin-right 0.5s;
     padding: 20px;
-    opacity: 0.85;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
