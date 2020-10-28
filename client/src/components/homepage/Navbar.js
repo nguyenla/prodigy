@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "../../css/homepage/Navbar.css";
 
@@ -32,7 +33,7 @@ function Navbar(props) {
             </div>
             <div className="navbar-right">
                 <a href="#login">Đăng Nhập</a>
-                <a href="signup.html">Đăng Ký</a>
+                <Link to="/signup"> Đăng Ký</Link>
             </div>
         </div>
     );
