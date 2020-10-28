@@ -13,65 +13,6 @@ body {
     background-size: cover;
 }
 
-#dashboard {
-    color: white;
-    /* background-color: #F5D47F; */
-}
-
-#intro {
-    padding-top: 5rem;
-}
-
-/* The side navigation menu */
-
-.sidenav {
-    height: 100%;
-    /* 100% Full-height */
-    width: 0;
-    /* 0 width - change this with JavaScript */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Stay on top */
-    top: 0;
-    /* Stay at the top */
-    left: 0;
-    background: radial-gradient(#47C7F0, #99ccff);
-    /* Black*/
-    overflow-x: hidden;
-    /* Disable horizontal scroll */
-    padding-top: 60px;
-    /* Place content 60px from the top */
-    transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-
-.sidenav a {
-    text-decoration: none;
-    color: #242222;
-    display: block;
-    transition: 0.3s;
-    text-align: right;
-}
-
-/* When you mouse over the navigation links, change their color */
-
-.sidenav a:hover {
-    color: #f1f1f167;
-}
-
-/* Position and style the close button (top right corner) */
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 
 #main {
@@ -91,18 +32,18 @@ body {
     }
 }
 
+h2 {
+    text-align: center;
+    font-size: 6rem;
+    color: #e88252;
+}
+
 /* Login form */
 
 form {
     font-size: 2rem;
     font-weight: 300;
     font-family: 'Sofia';
-}
-
-h2 {
-    text-align: center;
-    font-size: 6rem;
-    color: #e88252;
 }
 
 input[type=text], input[type=password] {
@@ -135,258 +76,10 @@ span.psw {
     }
 }
 
-/* Intro */
-
-#introBox {
-    width: auto;
-    border: none;
-    padding: 3rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    margin-top: none;
-    padding-top: 4rem;
-    background-image: url("https://media.istockphoto.com/photos/old-dirty-paper-texture-picture-id1133497899?k=6&m=1133497899&s=612x612&w=0&h=t0S9kN_X6YtYpq-ODVfZNWPTDNnosHgZy8z-oynj7zg=");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    text-align: left;
-    opacity: 0.9;
-}
-
-#introText {
-    margin-left: 4rem;
-    margin-right: 4rem;
-    letter-spacing: 0rem;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 100;
-    font-size: 2.7rem;
-    color: black;
-    text-indent: 5rem;
-    text-shadow: #f9f9f9;
-}
-
-#signature {
-    float: right;
-    font-family: 'Sofia';
-    font-size: 3rem;
-    text-emphasis: none;
-    text-decoration: none;
-}
-
-/* Styling the image and the dashboard content */
-
-img {
-    margin-top: 5rem;
-    margin-left: 7rem;
-    vertical-align: middle;
-}
-
-p7 {
-    float: right;
-    font-size: 4rem;
-    margin-top: 20rem;
-    margin-right: 18rem;
-    font-family: 'Merriweather', serif;
-    font-weight: bold;
-}
-
-p8 {
-    font-size: 2rem;
-    font-family: 'Merriweather', serif;
-}
-
-/* Buttons */
-
-.btn {
-    border: 2px solid black;
-    background-color: white;
-    color: black;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* Green */
-
-.success {
-    border-color: #4ADBAC;
-    color: #4ADBAC;
-}
-
-.success:hover {
-    background-color: #4ADBAC;
-    color: white;
-}
-
-/* Blue */
-
-.info {
-    border-color: #FE491A;
-    color: #FE491A;
-}
-
-.info:hover {
-    background: #FE491A;
-    color: white;
-}
-
-/* Orange */
-
-.warning {
-    border-color: #F7b733;
-    color: #F7b733;
-}
-
-.warning:hover {
-    background: #F7b733;
-    color: white;
-}
-
-/* Arrow down */
-
-#arrow-down {
-    text-align: center;
-    color: white;
-    font-size: 1rem;
-    padding-top: 5rem;
-    text-decoration: none;
-}
-
-#arrow-down a {
-    color: white;
-}
-
-#arrow-down a:hover {
-    color: grey;
-}
-
-#arrow-up {
-    text-align: center;
-    color: white;
-    font-size: 1rem;
-    padding-bottom: 5rem;
-}
-
-#arrow-up a {
-    color: white;
-}
-
-#arrow-up a:hover {
-    color: grey;
-}
-
-/*Smooth Scrolling */
-
-html {
-    scroll-behavior: smooth;
-}
-
-/* Footer styling*/
-
-footer {
-    background-color: none;
-    opacity: 0.6;
-    color: white;
-    text-align: center;
-    font-size: 2rem;
-    padding: 1rem;
-    padding-bottom: none;
-}
-
-footer :hover {
-    opacity: 0.9;
-    background-color: white;
-    color: black;
-}
-
-footer a {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* Why TimeTurner */
-
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-
-.column {
-    float: left;
-    width: 25%;
-    padding: 5px;
-    font-size: 2rem;
-}
-
-/* Clear floats after image containers */
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-#why-us {
-    background-image: url("https://img.freepik.com/free-photo/seamless-wood-texture-background_105762-62.jpg?size=626&ext=jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: auto;
-    border: none;
-    padding: 3rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    margin-top: 4rem;
-    padding-top: 4rem;
-    font-family: 'Merriweather', serif;
-    opacity: 0.8;
-    cursor: pointer;
-}
-
-#why-us :hover {
-    opacity: 1;
-}
-
-h3 {
-    font-family: 'Merriweather', serif;
-    text-align: center;
-    color: #242222;
-    font-size: 4rem;
-}
-
 html {
     box-sizing: border-box;
 }
 
 *, *:before, *:after {
     box-sizing: inherit;
-}
-
-.column {
-    float: left;
-    width: 25.0%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-}
-
-.card {
-    margin: 8px;
-    text-align: center;
-}
-
-.about-section {
-    padding: 50px;
-    text-align: center;
-    color: white;
-}
-
-.container {
-    padding: 0 16px;
-}
-
-.container::after, .row::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-p5 {
-    color: grey;
 }
